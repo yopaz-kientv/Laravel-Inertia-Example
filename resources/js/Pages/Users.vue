@@ -11,15 +11,14 @@
 </template>
 
 <script>
-    import { Link, Head } from "@inertiajs/inertia-vue";
+    import { Link } from '@inertiajs/inertia-vue';
 
     export default {
         components: {
-            Link,
-            Head,
+            Link
         },
         props: {
-            users: Array,
-        },
+            users: Array
+        }
     };
 </script>

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use App\Exceptions\NotFoundJson;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -30,9 +31,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+
+        Route::model('task', 'App\Task', function () {
+            throw new NotFoundJson;
+        });
     }
 
     /**

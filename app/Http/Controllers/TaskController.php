@@ -30,33 +30,12 @@ class TaskController extends Controller
         Task::create(
             $request->validate([
                 'name' => ['required', 'max:50'],
+                'description' => ['max:255'],
                 'status' => ['required', 'max:5'],
             ])
         );
 
         return redirect()->route('tasks.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Task  $task
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Task $task)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Task  $task
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Task $task)
-    {
-        //
     }
 
     /**
@@ -68,7 +47,9 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $task->update($request->all());
+
+        return redirect()->route('tasks.index');
     }
 
     /**
@@ -79,6 +60,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+        return redirect()->route('tasks.index');
     }
 }
