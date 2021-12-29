@@ -97,7 +97,7 @@
             },
 
             updateTask(task) {
-                this.$inertia.put(this.route('tasks.index', task.id), task);
+                this.$inertia.put(this.route('tasks.update', task.id), task);
             },
 
             deleteTask(task) {
