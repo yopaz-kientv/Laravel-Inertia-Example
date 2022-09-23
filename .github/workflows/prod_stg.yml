@@ -37,4 +37,3 @@ jobs:
             php artisan view:cache
             npm install
             npm run production
-
