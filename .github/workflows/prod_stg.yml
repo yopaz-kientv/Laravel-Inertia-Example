@@ -23,10 +23,10 @@ jobs:
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.PORT }}
+          host: 103.142.25.108
+          username: root
+          key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA1WnVcMnufsMQXQv5l5TzoUqcKhLYVCeRE2lcQxOglX kientv@yopaz.vn"
+          port: 22
           script: |
             cd /var/www/Laravel-Inertia-Example
             git checkout -f master && git clean -f -d && git pull origin master
