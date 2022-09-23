@@ -30,4 +30,11 @@ jobs:
           script: |
             cd /var/www/Laravel-Inertia-Example
             git checkout -f master && git clean -f -d && git pull origin master
+            composer install
+            php artisan migrate --force --no-interaction
+            php artisan route:clear
+            php artisan view:clear
+            php artisan view:cache
+            npm install
+            npm run production
 
