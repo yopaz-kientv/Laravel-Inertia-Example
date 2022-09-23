@@ -28,6 +28,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           passphrase: '24A3A58iX6.D#g'
+          script_stop: true
           script: |
             cd /var/www/Laravel-Inertia-Example
             git checkout -f master && git clean -f -d && git pull origin master
