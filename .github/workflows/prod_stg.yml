@@ -30,3 +30,4 @@ jobs:
           script: |
             cd /var/www/html/mingla-dev.yopaz.com
             git checkout -f master && git clean -f -d && git pull origin master
+
