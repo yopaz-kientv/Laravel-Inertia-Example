@@ -28,6 +28,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /var/www/html/mingla-dev.yopaz.com
+            cd /var/www/Laravel-Inertia-Example
             git checkout -f master && git clean -f -d && git pull origin master
 
